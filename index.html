@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quarterly Earnings – Interactive RevealJS Deck</title>
+  <!-- RevealJS core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
+  <!-- Theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme" />
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css" />
+  <!-- KaTeX for math -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <style>
+    .subtitle { font-size: 1.1rem; opacity: .85; }
+    .brand-pill { display:inline-block; padding:.35rem .75rem; border-radius:9999px; background:#1f2937; color:#fff; font-weight:600; letter-spacing:.02em; }
+    .muted { opacity:.7; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p class="subtitle">Interactive stakeholder presentation using <strong>RevealJS</strong></p>
+        <p class="brand-pill">Technical Consultant</p>
+        <p class="muted">Contact: <a href="mailto:23f2003607@ds.study.iitm.ac.in">23f2003607@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">
+          Welcome stakeholders. This deck demonstrates a modern, web‑based presentation with live code, math, and animations.
+          Use ← → to navigate, S to open speaker view, and F for full screen.
+        </aside>
+      </section>
+
+      <!-- Agenda with fragments (animated reveals) -->
+      <section>
+        <h2>Agenda</h2>
+        <ul>
+          <li class="fragment">Business highlights (QoQ & YoY)</li>
+          <li class="fragment">Financial performance overview</li>
+          <li class="fragment">Segment analysis & risk</li>
+          <li class="fragment">Outlook & guidance</li>
+          <li class="fragment">Q&A</li>
+        </ul>
+        <aside class="notes">Each bullet will appear one by one. Pause briefly to emphasize key changes.</aside>
+      </section>
+
+      <!-- Markdown slide (at least one) -->
+      <section data-markdown>
+        <textarea data-template>
+### KPI Snapshot *(Markdown slide)*
+
+- **Revenue (₹)**: `TBD`
+- **Operating Margin**: `TBD`
+- **EPS (₹)**: `TBD`
+- **Net NPA**: `TBD`
+
+> Replace `TBD` with your latest numbers before publishing.
+
+**Note:** Use the speaker view (`S`) to see your guidance notes.
+        </textarea>
+        <aside class="notes">Update KPI values after finance sign‑off. Keep one decimal precision for EPS, two for margins.</aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Code Sample: Inline P&L Transformation</h2>
+        <pre><code class="language-python">import pandas as pd
+
+# Load quarterly P&amp;L (CSV export from EDW)
+df = pd.read_csv("pl_q.csv")
+
+# Normalize column names, compute YoY and margin
+cols = {"revenue":"Revenue", "opex":"OpEx", "net_income":"NetIncome"}
+df = df.rename(columns=cols)
+df["OpMargin"] = (1 - df.OpEx / df.Revenue) * 100
+
+df["YoY_Rev_%"] = df.Revenue.pct_change(periods=4).mul(100)
+print(df.tail(4))
+</code></pre>
+        <aside class="notes">Explain how analytics notebooks back the narrative. Highlight reproducibility and traceability.</aside>
+      </section>
+
+      <!-- Math slide (financial formulas) -->
+      <section>
+        <h2>Valuation & Risk Math</h2>
+        <p>Discounted Cash Flow (DCF):</p>
+        <p>\[ PV = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} \]</p>
+        <p>Portfolio Volatility:</p>
+        <p>\[ \sigma_p = \sqrt{\mathbf{w}^\top \Sigma \, \mathbf{w}} \]</p>
+        <aside class="notes">Briefly state assumptions: cash flows, discount rate r, horizon T; covariance matrix for risk.</aside>
+      </section>
+
+      <!-- Fragments with visuals/text emphasis -->
+      <section>
+        <h2>Key Drivers (Q/Q)</h2>
+        <p class="fragment">↑ Net Interest Income (NII) with stable Cost of Funds</p>
+        <p class="fragment">↓ Credit cost moderates on improved recoveries</p>
+        <p class="fragment">↔ Operating expenses disciplined</p>
+        <aside class="notes">Use arrows to guide sentiment: up, down, flat.</aside>
+      </section>
+
+      <!-- Publishing guidance inside the deck -->
+      <section>
+        <h2>Publish on GitHub Pages</h2>
+        <ol>
+          <li class="fragment">Create a GitHub repo (e.g., <code>earnings-deck</code>). Put this <code>index.html</code> at the repo root.</li>
+          <li class="fragment">Commit &amp; push to <code>main</code>.</li>
+          <li class="fragment">Settings → Pages → Source: <strong>Deploy from a branch</strong>, Branch: <strong>main</strong>, Folder: <strong>/ (root)</strong>.</li>
+          <li class="fragment">Open: <code>https://&lt;USER&gt;.github.io/&lt;REPO&gt;/</code> (add <code>?v=1</code>, <code>?v=2</code> to bypass cache).</li>
+        </ol>
+        <aside class="notes">If using an org account, the URL is <code>https://&lt;ORG&gt;.github.io/&lt;REPO&gt;/</code>. Ensure repo is public or enable Pages for private repos on paid plans.</aside>
+      </section>
+
+      <!-- Closing -->
+      <section>
+        <h2>Thank You</h2>
+        <p>Questions? Reach out at <a href="mailto:23f2003607@ds.study.iitm.ac.in">23f2003607@ds.study.iitm.ac.in</a></p>
+        <aside class="notes">Invite questions; then exit to summary appendix if needed.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal core & plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+
+  <script>
+    // Initialize RevealJS with plugins
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      // KaTeX configuration (optional)
+      math: {
+        // KaTeX options
+        katex: katex,
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\(", right: "\\)", display: false},
+          {left: "\\[", right: "\\]", display: true}
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
