@@ -16,6 +16,7 @@
     .subtitle { font-size: 1.1rem; opacity: .85; }
     .brand-pill { display:inline-block; padding:.35rem .75rem; border-radius:9999px; background:#1f2937; color:#fff; font-weight:600; letter-spacing:.02em; }
     .muted { opacity:.7; }
+    .email-footer { position:absolute; bottom:10px; right:20px; font-size:0.8rem; opacity:0.6; }
   </style>
 </head>
 <body>
@@ -30,8 +31,8 @@
         <p class="muted">Contact: <a href="mailto:23f2003607@ds.study.iitm.ac.in">23f2003607@ds.study.iitm.ac.in</a></p>
         <aside class="notes">
           Welcome stakeholders. This deck demonstrates a modern, web‑based presentation with live code, math, and animations.
-          Use ← → to navigate, S to open speaker view, and F for full screen.
         </aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
       <!-- Agenda with fragments (animated reveals) -->
@@ -45,6 +46,7 @@
           <li class="fragment">Q&A</li>
         </ul>
         <aside class="notes">Each bullet will appear one by one. Pause briefly to emphasize key changes.</aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
       <!-- Markdown slide (at least one) -->
@@ -62,6 +64,7 @@
 **Note:** Use the speaker view (`S`) to see your guidance notes.
         </textarea>
         <aside class="notes">Update KPI values after finance sign‑off. Keep one decimal precision for EPS, two for margins.</aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
       <!-- Code sample with syntax highlighting -->
@@ -81,6 +84,7 @@ df["YoY_Rev_%"] = df.Revenue.pct_change(periods=4).mul(100)
 print(df.tail(4))
 </code></pre>
         <aside class="notes">Explain how analytics notebooks back the narrative. Highlight reproducibility and traceability.</aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
       <!-- Math slide (financial formulas) -->
@@ -91,6 +95,7 @@ print(df.tail(4))
         <p>Portfolio Volatility:</p>
         <p>\[ \sigma_p = \sqrt{\mathbf{w}^\top \Sigma \, \mathbf{w}} \]</p>
         <aside class="notes">Briefly state assumptions: cash flows, discount rate r, horizon T; covariance matrix for risk.</aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
       <!-- Fragments with visuals/text emphasis -->
@@ -100,6 +105,7 @@ print(df.tail(4))
         <p class="fragment">↓ Credit cost moderates on improved recoveries</p>
         <p class="fragment">↔ Operating expenses disciplined</p>
         <aside class="notes">Use arrows to guide sentiment: up, down, flat.</aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
       <!-- Publishing guidance inside the deck -->
@@ -112,6 +118,7 @@ print(df.tail(4))
           <li class="fragment">Open: <code>https://&lt;USER&gt;.github.io/&lt;REPO&gt;/</code> (add <code>?v=1</code>, <code>?v=2</code> to bypass cache).</li>
         </ol>
         <aside class="notes">If using an org account, the URL is <code>https://&lt;ORG&gt;.github.io/&lt;REPO&gt;/</code>. Ensure repo is public or enable Pages for private repos on paid plans.</aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
       <!-- Closing -->
@@ -119,6 +126,7 @@ print(df.tail(4))
         <h2>Thank You</h2>
         <p>Questions? Reach out at <a href="mailto:23f2003607@ds.study.iitm.ac.in">23f2003607@ds.study.iitm.ac.in</a></p>
         <aside class="notes">Invite questions; then exit to summary appendix if needed.</aside>
+        <div class="email-footer">23f2003607@ds.study.iitm.ac.in</div>
       </section>
 
     </div>
@@ -138,9 +146,7 @@ print(df.tail(4))
       hash: true,
       transition: 'slide',
       plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-      // KaTeX configuration (optional)
       math: {
-        // KaTeX options
         katex: katex,
         delimiters: [
           {left: "$$", right: "$$", display: true},
@@ -153,3 +159,4 @@ print(df.tail(4))
   </script>
 </body>
 </html>
+
